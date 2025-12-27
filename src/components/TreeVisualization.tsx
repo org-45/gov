@@ -1,10 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import {
   ReactFlow,
   Background,
   Controls,
   useNodesState,
   useEdgesState,
+  useReactFlow,
+  ReactFlowProvider,
   type NodeTypes,
   type Node,
   type Edge,
@@ -27,7 +29,7 @@ interface TreeVisualizationProps {
   onNodeSelect: (node: GraphNode | null) => void;
 }
 
-export default function TreeVisualization({
+function TreeVisualizationInner({
   processedData,
   selectedNode,
   onNodeSelect,
@@ -35,9 +37,12 @@ export default function TreeVisualization({
   const [nodes, setNodes, onNodesChange] = useNodesState<Node<CustomNodeData>>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+  const lastExpandedNodeRef = useRef<string | null>(null);
+  const { fitView, getNode } = useReactFlow();
 
   // Toggle node expansion
   const handleNodeToggle = useCallback((nodeId: string) => {
+    lastExpandedNodeRef.current = nodeId;
     setExpandedNodes(prev => {
       const next = new Set(prev);
       if (next.has(nodeId)) {
@@ -111,7 +116,25 @@ export default function TreeVisualization({
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [processedData, expandedNodes, setNodes, setEdges, onNodeSelect, handleNodeToggle]);
+
+    // Focus on the last expanded/collapsed node
+    if (lastExpandedNodeRef.current) {
+      setTimeout(() => {
+        const nodeId = lastExpandedNodeRef.current;
+        if (nodeId) {
+          const node = getNode(nodeId);
+          if (node) {
+            // Center the viewport on the expanded node and its children
+            fitView({
+              nodes: [{ id: nodeId }],
+              duration: 300,
+              padding: 0.5,
+            });
+          }
+        }
+      }, 50);
+    }
+  }, [processedData, expandedNodes, setNodes, setEdges, onNodeSelect, handleNodeToggle, fitView, getNode]);
 
   const handleCloseDetails = useCallback(() => {
     onNodeSelect(null);
@@ -174,5 +197,13 @@ export default function TreeVisualization({
         <Controls />
       </ReactFlow>
     </div>
+  );
+}
+
+export default function TreeVisualization(props: TreeVisualizationProps) {
+  return (
+    <ReactFlowProvider>
+      <TreeVisualizationInner {...props} />
+    </ReactFlowProvider>
   );
 }
