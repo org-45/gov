@@ -39,3 +39,11 @@ export interface CustomNodeData extends GraphNode {
   onNodeClick?: (node: GraphNode) => void;
   [key: string]: unknown;
 }
+
+// Tree-specific types
+export interface TreeNodeData extends GraphNode {
+  children: TreeNodeData[];
+  parent?: TreeNodeData;
+  secondaryParents?: Array<{ id: string; relationship: string }>;
+  depth: number;
+}
