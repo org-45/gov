@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Government of Nepal",
-    "description": "Federal Democratic Republic of Nepal - Government Structure",
+    "title": "Government of Nepal - Complete Structure",
+    "description": "Federal Democratic Republic of Nepal - Comprehensive Government Structure including all ministries, constitutional bodies, and government levels",
     "lastUpdated": "2025-12-27",
     "country": "Nepal",
     "source": "Constitution of Nepal 2015"
@@ -36,14 +36,70 @@
       "label": "Council of Ministers",
       "type": "executive",
       "tier": 3,
-      "description": "Cabinet appointed by Prime Minister"
+      "description": "Cabinet appointed by Prime Minister (max 25 members)",
+      "metadata": {
+        "max_members": "25",
+        "composition": "Federal Parliament members"
+      }
+    },
+    {
+      "id": "ministry-agriculture",
+      "label": "Ministry of Agriculture and Livestock Development",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Oversees agriculture, livestock, and rural development"
+    },
+    {
+      "id": "ministry-cooperatives",
+      "label": "Ministry of Co-operatives and Poverty Alleviation",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Manages cooperative societies and poverty reduction programs"
+    },
+    {
+      "id": "ministry-culture-tourism",
+      "label": "Ministry of Culture, Tourism and Civil Aviation",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Promotes culture, tourism industry, and aviation sector"
+    },
+    {
+      "id": "ministry-defense",
+      "label": "Ministry of Defence",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Oversees national defense and military affairs"
+    },
+    {
+      "id": "ministry-education",
+      "label": "Ministry of Education, Science and Technology",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Manages education system, science and technology development",
+      "metadata": {
+        "responsibilities": "Schools, universities, research"
+      }
+    },
+    {
+      "id": "ministry-energy",
+      "label": "Ministry of Energy, Water Resources and Irrigation",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Develops energy infrastructure, water resources, and irrigation"
+    },
+    {
+      "id": "ministry-federal-affairs",
+      "label": "Ministry of Federal Affairs and General Administration",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Coordinates federal structure and general administration"
     },
     {
       "id": "ministry-finance",
       "label": "Ministry of Finance",
       "type": "ministry",
       "tier": 4,
-      "description": "Manages national budget and fiscal policy",
+      "description": "Manages national budget, fiscal policy, and economic affairs",
       "metadata": {
         "website": "https://mof.gov.np"
       }
@@ -59,35 +115,63 @@
       }
     },
     {
+      "id": "ministry-forests",
+      "label": "Ministry of Forests and Environment",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Manages forests, wildlife, and environmental protection"
+    },
+    {
+      "id": "ministry-health",
+      "label": "Ministry of Health and Population",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Oversees healthcare system and population welfare"
+    },
+    {
       "id": "ministry-home-affairs",
       "label": "Ministry of Home Affairs",
       "type": "ministry",
       "tier": 4,
-      "description": "Maintains internal security and law and order",
+      "description": "Maintains internal security, law and order",
       "metadata": {
         "website": "https://moha.gov.np"
       }
     },
     {
-      "id": "ministry-defense",
-      "label": "Ministry of Defense",
+      "id": "ministry-industry",
+      "label": "Ministry of Industry, Commerce and Supplies",
       "type": "ministry",
       "tier": 4,
-      "description": "Oversees national defense and military affairs"
+      "description": "Promotes industrial development, trade, and commerce"
     },
     {
-      "id": "ministry-education",
-      "label": "Ministry of Education",
+      "id": "ministry-communication",
+      "label": "Ministry of Communication and Information Technology",
       "type": "ministry",
       "tier": 4,
-      "description": "Education, Science and Technology"
+      "description": "Develops ICT infrastructure and telecommunications"
     },
     {
-      "id": "ministry-health",
-      "label": "Ministry of Health",
+      "id": "ministry-labour",
+      "label": "Ministry of Labour, Employment and Social Security",
       "type": "ministry",
       "tier": 4,
-      "description": "Health and Population services"
+      "description": "Handles labour rights, employment, and social security"
+    },
+    {
+      "id": "ministry-land",
+      "label": "Ministry of Land Management, Cooperatives and Poverty Alleviation",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Manages land administration and reform"
+    },
+    {
+      "id": "ministry-law",
+      "label": "Ministry of Law, Justice and Parliamentary Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Oversees legal affairs and parliamentary procedures"
     },
     {
       "id": "federal-parliament",
@@ -127,24 +211,46 @@
       "label": "Supreme Court",
       "type": "judicial",
       "tier": 2,
-      "description": "Highest court in Nepal",
+      "description": "Highest court - Chief Justice and 20 Justices",
       "metadata": {
-        "website": "https://supremecourt.gov.np"
+        "website": "https://supremecourt.gov.np",
+        "justices": "21 (1 Chief + 20 Justices)",
+        "role": "Final authority on Constitution and laws"
       }
     },
     {
       "id": "high-courts",
-      "label": "High Courts (7)",
+      "label": "High Courts",
       "type": "judicial",
       "tier": 3,
-      "description": "Provincial appellate courts"
+      "description": "7 Provincial appellate courts with 11 benches",
+      "metadata": {
+        "count": "7 (one per province)",
+        "benches": "11 total",
+        "role": "Appellate jurisdiction"
+      }
     },
     {
       "id": "district-courts",
       "label": "District Courts",
       "type": "judicial",
       "tier": 4,
-      "description": "Local level courts"
+      "description": "77 District Courts (one per district)",
+      "metadata": {
+        "count": "77",
+        "role": "Original jurisdiction for most cases"
+      }
+    },
+    {
+      "id": "special-court",
+      "label": "Special Court",
+      "type": "judicial",
+      "tier": 3,
+      "description": "Specialized court for specific case types",
+      "metadata": {
+        "location": "Kathmandu",
+        "established": "2002"
+      }
     },
     {
       "id": "election-commission",
@@ -160,12 +266,12 @@
     },
     {
       "id": "ciaa",
-      "label": "CIAA",
+      "label": "Commission for Investigation of Abuse of Authority",
       "type": "constitutional",
       "tier": 2,
-      "description": "Commission for Investigation of Abuse of Authority",
+      "description": "Anti-corruption watchdog body",
       "metadata": {
-        "role": "Anti-corruption watchdog"
+        "role": "Investigates abuse of authority and corruption"
       }
     },
     {
@@ -173,21 +279,86 @@
       "label": "Public Service Commission",
       "type": "constitutional",
       "tier": 2,
-      "description": "Conducts civil service recruitment"
+      "description": "Conducts civil service recruitment",
+      "metadata": {
+        "role": "Recruitment and promotion of civil servants"
+      }
     },
     {
       "id": "auditor-general",
       "label": "Auditor General",
       "type": "constitutional",
       "tier": 2,
-      "description": "Audits government accounts"
+      "description": "Audits government accounts and expenditure",
+      "metadata": {
+        "role": "Financial accountability and transparency"
+      }
     },
     {
       "id": "national-human-rights-commission",
       "label": "National Human Rights Commission",
       "type": "constitutional",
       "tier": 2,
-      "description": "Protects and promotes human rights"
+      "description": "Protects and promotes human rights",
+      "metadata": {
+        "role": "Human rights protection and advocacy"
+      }
+    },
+    {
+      "id": "natural-resources-commission",
+      "label": "National Natural Resources and Fiscal Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Manages natural resources and fiscal distribution"
+    },
+    {
+      "id": "women-commission",
+      "label": "National Women Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Promotes women's rights and gender equality"
+    },
+    {
+      "id": "dalit-commission",
+      "label": "National Dalit Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Works for Dalit community rights and inclusion"
+    },
+    {
+      "id": "inclusion-commission",
+      "label": "National Inclusion Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Ensures social inclusion of marginalized groups"
+    },
+    {
+      "id": "indigenous-commission",
+      "label": "Indigenous Nationalities Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Protects indigenous peoples' rights and culture"
+    },
+    {
+      "id": "madhesi-commission",
+      "label": "Madhesi Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Advocates for Madhesi community rights"
+    },
+    {
+      "id": "tharu-commission",
+      "label": "Tharu Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Represents Tharu community interests"
+    },
+    {
+      "id": "muslim-commission",
+      "label": "Muslim Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Works for Muslim community welfare"
     },
     {
       "id": "attorney-general",
@@ -197,40 +368,207 @@
       "description": "Chief legal advisor to the government"
     },
     {
-      "id": "provincial-governments",
-      "label": "7 Provincial Governments",
+      "id": "province-koshi",
+      "label": "Koshi Province",
       "type": "provincial",
-      "tier": 2,
-      "description": "Koshi, Madhesh, Bagmati, Gandaki, Lumbini, Karnali, Sudurpashchim"
+      "tier": 3,
+      "description": "Province 1 - 14 districts",
+      "metadata": {
+        "districts": "14",
+        "leadership": "Governor and Chief Minister"
+      }
     },
     {
-      "id": "local-governments",
-      "label": "753 Local Governments",
-      "type": "local",
+      "id": "province-madhesh",
+      "label": "Madhesh Province",
+      "type": "provincial",
       "tier": 3,
-      "description": "Municipalities and rural municipalities"
+      "description": "Province 2 - 8 districts",
+      "metadata": {
+        "districts": "8",
+        "leadership": "Governor and Chief Minister"
+      }
+    },
+    {
+      "id": "province-bagmati",
+      "label": "Bagmati Province",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Province 3 - 13 districts (includes Kathmandu Valley)",
+      "metadata": {
+        "districts": "13",
+        "leadership": "Governor and Chief Minister",
+        "capital_region": "Kathmandu Valley"
+      }
+    },
+    {
+      "id": "province-gandaki",
+      "label": "Gandaki Province",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Province 4 - 11 districts",
+      "metadata": {
+        "districts": "11",
+        "leadership": "Governor and Chief Minister"
+      }
+    },
+    {
+      "id": "province-lumbini",
+      "label": "Lumbini Province",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Province 5 - 12 districts",
+      "metadata": {
+        "districts": "12",
+        "leadership": "Governor and Chief Minister"
+      }
+    },
+    {
+      "id": "province-karnali",
+      "label": "Karnali Province",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Province 6 - 10 districts (largest by area)",
+      "metadata": {
+        "districts": "10",
+        "area": "27,984 sq km",
+        "leadership": "Governor and Chief Minister"
+      }
+    },
+    {
+      "id": "province-sudurpashchim",
+      "label": "Sudurpashchim Province",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Province 7 - 9 districts",
+      "metadata": {
+        "districts": "9",
+        "leadership": "Governor and Chief Minister"
+      }
+    },
+    {
+      "id": "metropolitan-cities",
+      "label": "6 Metropolitan Cities",
+      "type": "local",
+      "tier": 4,
+      "description": "Kathmandu, Pokhara, Bharatpur, Biratnagar, Lalitpur, Birgunj",
+      "metadata": {
+        "count": "6",
+        "population_requirement": "500,000+",
+        "type": "Mahanagarpalika"
+      }
+    },
+    {
+      "id": "sub-metropolitan-cities",
+      "label": "11 Sub-Metropolitan Cities",
+      "type": "local",
+      "tier": 4,
+      "description": "Including Dhangadhi, Itahari, Janakpur, Butwal, and others",
+      "metadata": {
+        "count": "11",
+        "population_requirement": "200,000+",
+        "type": "Upa-Mahanagarpalika"
+      }
+    },
+    {
+      "id": "municipalities",
+      "label": "276 Municipalities",
+      "type": "local",
+      "tier": 4,
+      "description": "Urban local governments",
+      "metadata": {
+        "count": "276",
+        "population_requirement": "10,000+",
+        "type": "Nagarpalika"
+      }
+    },
+    {
+      "id": "rural-municipalities",
+      "label": "460 Rural Municipalities",
+      "type": "local",
+      "tier": 4,
+      "description": "Rural local governments",
+      "metadata": {
+        "count": "460",
+        "type": "Gaunpalika",
+        "total_local_units": "753 (including all types)"
+      }
     }
   ],
   "edges": [
     {"from": "president", "to": "prime-minister", "relationship": "appoints"},
     {"from": "prime-minister", "to": "council-of-ministers", "relationship": "leads"},
-    {"from": "council-of-ministers", "to": "ministry-finance", "relationship": "includes"},
-    {"from": "council-of-ministers", "to": "ministry-foreign-affairs", "relationship": "includes"},
-    {"from": "council-of-ministers", "to": "ministry-home-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-agriculture", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-cooperatives", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-culture-tourism", "relationship": "includes"},
     {"from": "council-of-ministers", "to": "ministry-defense", "relationship": "includes"},
     {"from": "council-of-ministers", "to": "ministry-education", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-energy", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-federal-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-finance", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-foreign-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-forests", "relationship": "includes"},
     {"from": "council-of-ministers", "to": "ministry-health", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-home-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-industry", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-communication", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-labour", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-land", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-law", "relationship": "includes"},
     {"from": "federal-parliament", "to": "house-of-representatives", "relationship": "comprises"},
     {"from": "federal-parliament", "to": "national-assembly", "relationship": "comprises"},
     {"from": "federal-parliament", "to": "prime-minister", "relationship": "elects"},
     {"from": "supreme-court", "to": "high-courts", "relationship": "oversees"},
+    {"from": "supreme-court", "to": "special-court", "relationship": "oversees"},
     {"from": "high-courts", "to": "district-courts", "relationship": "oversees"},
     {"from": "president", "to": "election-commission", "relationship": "appoints"},
     {"from": "president", "to": "ciaa", "relationship": "appoints"},
     {"from": "president", "to": "public-service-commission", "relationship": "appoints"},
     {"from": "president", "to": "auditor-general", "relationship": "appoints"},
     {"from": "president", "to": "national-human-rights-commission", "relationship": "appoints"},
+    {"from": "president", "to": "natural-resources-commission", "relationship": "appoints"},
+    {"from": "president", "to": "women-commission", "relationship": "appoints"},
+    {"from": "president", "to": "dalit-commission", "relationship": "appoints"},
+    {"from": "president", "to": "inclusion-commission", "relationship": "appoints"},
+    {"from": "president", "to": "indigenous-commission", "relationship": "appoints"},
+    {"from": "president", "to": "madhesi-commission", "relationship": "appoints"},
+    {"from": "president", "to": "tharu-commission", "relationship": "appoints"},
+    {"from": "president", "to": "muslim-commission", "relationship": "appoints"},
     {"from": "prime-minister", "to": "attorney-general", "relationship": "appoints"},
-    {"from": "provincial-governments", "to": "local-governments", "relationship": "oversees"}
+    {"from": "president", "to": "province-koshi", "relationship": "appoints"},
+    {"from": "president", "to": "province-madhesh", "relationship": "appoints"},
+    {"from": "president", "to": "province-bagmati", "relationship": "appoints"},
+    {"from": "president", "to": "province-gandaki", "relationship": "appoints"},
+    {"from": "president", "to": "province-lumbini", "relationship": "appoints"},
+    {"from": "president", "to": "province-karnali", "relationship": "appoints"},
+    {"from": "president", "to": "province-sudurpashchim", "relationship": "appoints"},
+    {"from": "province-koshi", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-koshi", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-koshi", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-koshi", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-madhesh", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-madhesh", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-madhesh", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-madhesh", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-bagmati", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-bagmati", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-bagmati", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-bagmati", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-gandaki", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-gandaki", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-gandaki", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-gandaki", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-lumbini", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-lumbini", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-lumbini", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-lumbini", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-karnali", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-karnali", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-karnali", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-karnali", "to": "rural-municipalities", "relationship": "includes"},
+    {"from": "province-sudurpashchim", "to": "metropolitan-cities", "relationship": "includes"},
+    {"from": "province-sudurpashchim", "to": "sub-metropolitan-cities", "relationship": "includes"},
+    {"from": "province-sudurpashchim", "to": "municipalities", "relationship": "includes"},
+    {"from": "province-sudurpashchim", "to": "rural-municipalities", "relationship": "includes"}
   ]
 }
