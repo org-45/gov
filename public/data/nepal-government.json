@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "title": "Government of Nepal",
+    "description": "Federal Democratic Republic of Nepal - Government Structure",
+    "lastUpdated": "2025-12-27",
+    "country": "Nepal",
+    "source": "Constitution of Nepal 2015"
+  },
+  "nodes": [
+    {
+      "id": "president",
+      "label": "President",
+      "type": "executive",
+      "tier": 1,
+      "description": "Head of State (Ceremonial)",
+      "currentHolder": "Ram Chandra Poudel",
+      "metadata": {
+        "established": "2008",
+        "website": "https://presidentofnepal.gov.np",
+        "term": "5 years"
+      }
+    },
+    {
+      "id": "prime-minister",
+      "label": "Prime Minister",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of Government",
+      "metadata": {
+        "appointed_by": "Parliament",
+        "powers": "Selects Council of Ministers"
+      }
+    },
+    {
+      "id": "council-of-ministers",
+      "label": "Council of Ministers",
+      "type": "executive",
+      "tier": 3,
+      "description": "Cabinet appointed by Prime Minister"
+    },
+    {
+      "id": "ministry-finance",
+      "label": "Ministry of Finance",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Manages national budget and fiscal policy",
+      "metadata": {
+        "website": "https://mof.gov.np"
+      }
+    },
+    {
+      "id": "ministry-foreign-affairs",
+      "label": "Ministry of Foreign Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Handles international relations and diplomacy",
+      "metadata": {
+        "website": "https://mofa.gov.np"
+      }
+    },
+    {
+      "id": "ministry-home-affairs",
+      "label": "Ministry of Home Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Maintains internal security and law and order",
+      "metadata": {
+        "website": "https://moha.gov.np"
+      }
+    },
+    {
+      "id": "ministry-defense",
+      "label": "Ministry of Defense",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Oversees national defense and military affairs"
+    },
+    {
+      "id": "ministry-education",
+      "label": "Ministry of Education",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Education, Science and Technology"
+    },
+    {
+      "id": "ministry-health",
+      "label": "Ministry of Health",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Health and Population services"
+    },
+    {
+      "id": "federal-parliament",
+      "label": "Federal Parliament",
+      "type": "legislative",
+      "tier": 2,
+      "description": "Bicameral legislature of Nepal",
+      "metadata": {
+        "established": "2018",
+        "members": "334 total"
+      }
+    },
+    {
+      "id": "house-of-representatives",
+      "label": "House of Representatives",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Lower house - 275 members",
+      "metadata": {
+        "members": "275",
+        "election": "165 FPTP + 110 PR"
+      }
+    },
+    {
+      "id": "national-assembly",
+      "label": "National Assembly",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Upper house - 59 members",
+      "metadata": {
+        "members": "59",
+        "term": "Staggered 6-year terms"
+      }
+    },
+    {
+      "id": "supreme-court",
+      "label": "Supreme Court",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Highest court in Nepal",
+      "metadata": {
+        "website": "https://supremecourt.gov.np"
+      }
+    },
+    {
+      "id": "high-courts",
+      "label": "High Courts (7)",
+      "type": "judicial",
+      "tier": 3,
+      "description": "Provincial appellate courts"
+    },
+    {
+      "id": "district-courts",
+      "label": "District Courts",
+      "type": "judicial",
+      "tier": 4,
+      "description": "Local level courts"
+    },
+    {
+      "id": "election-commission",
+      "label": "Election Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Conducts and monitors elections",
+      "metadata": {
+        "members": "6 (1 Chief + 5 Commissioners)",
+        "term": "6 years",
+        "website": "https://election.gov.np"
+      }
+    },
+    {
+      "id": "ciaa",
+      "label": "CIAA",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Commission for Investigation of Abuse of Authority",
+      "metadata": {
+        "role": "Anti-corruption watchdog"
+      }
+    },
+    {
+      "id": "public-service-commission",
+      "label": "Public Service Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Conducts civil service recruitment"
+    },
+    {
+      "id": "auditor-general",
+      "label": "Auditor General",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Audits government accounts"
+    },
+    {
+      "id": "national-human-rights-commission",
+      "label": "National Human Rights Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Protects and promotes human rights"
+    },
+    {
+      "id": "attorney-general",
+      "label": "Attorney General",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Chief legal advisor to the government"
+    },
+    {
+      "id": "provincial-governments",
+      "label": "7 Provincial Governments",
+      "type": "provincial",
+      "tier": 2,
+      "description": "Koshi, Madhesh, Bagmati, Gandaki, Lumbini, Karnali, Sudurpashchim"
+    },
+    {
+      "id": "local-governments",
+      "label": "753 Local Governments",
+      "type": "local",
+      "tier": 3,
+      "description": "Municipalities and rural municipalities"
+    }
+  ],
+  "edges": [
+    {"from": "president", "to": "prime-minister", "relationship": "appoints"},
+    {"from": "prime-minister", "to": "council-of-ministers", "relationship": "leads"},
+    {"from": "council-of-ministers", "to": "ministry-finance", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-foreign-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-home-affairs", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-defense", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-education", "relationship": "includes"},
+    {"from": "council-of-ministers", "to": "ministry-health", "relationship": "includes"},
+    {"from": "federal-parliament", "to": "house-of-representatives", "relationship": "comprises"},
+    {"from": "federal-parliament", "to": "national-assembly", "relationship": "comprises"},
+    {"from": "federal-parliament", "to": "prime-minister", "relationship": "elects"},
+    {"from": "supreme-court", "to": "high-courts", "relationship": "oversees"},
+    {"from": "high-courts", "to": "district-courts", "relationship": "oversees"},
+    {"from": "president", "to": "election-commission", "relationship": "appoints"},
+    {"from": "president", "to": "ciaa", "relationship": "appoints"},
+    {"from": "president", "to": "public-service-commission", "relationship": "appoints"},
+    {"from": "president", "to": "auditor-general", "relationship": "appoints"},
+    {"from": "president", "to": "national-human-rights-commission", "relationship": "appoints"},
+    {"from": "prime-minister", "to": "attorney-general", "relationship": "appoints"},
+    {"from": "provincial-governments", "to": "local-governments", "relationship": "oversees"}
+  ]
+}

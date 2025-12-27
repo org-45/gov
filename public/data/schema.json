@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Government Visualization Data Schema",
+  "description": "Schema for hierarchical government structure data",
+  "type": "object",
+  "required": ["metadata", "nodes", "edges"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["title", "description", "lastUpdated"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Name of the structure being visualized"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the structure"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Last update date in YYYY-MM-DD format"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country name (optional)"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the data (optional)"
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "description": "List of nodes in the graph",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "type"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the node"
+          },
+          "label": {
+            "type": "string",
+            "description": "Display name of the node"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["executive", "legislative", "judicial", "constitutional", "ministry", "provincial", "local"],
+            "description": "Type of the node (determines color)"
+          },
+          "tier": {
+            "type": "number",
+            "description": "Hierarchy tier (optional, for layout)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description (optional)"
+          },
+          "currentHolder": {
+            "type": "string",
+            "description": "Current office holder (optional)"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Additional metadata as key-value pairs (optional)",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "description": "List of relationships between nodes",
+      "items": {
+        "type": "object",
+        "required": ["from", "to"],
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Source node ID"
+          },
+          "to": {
+            "type": "string",
+            "description": "Target node ID"
+          },
+          "relationship": {
+            "type": "string",
+            "description": "Type of relationship (optional)"
+          }
+        }
+      }
+    }
+  }
+}
