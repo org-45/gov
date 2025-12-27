@@ -22,6 +22,13 @@ export function CustomNode({ data }: NodeProps) {
     }
   };
 
+  const handleToggle = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering node selection
+    if (nodeData.onToggle) {
+      nodeData.onToggle();
+    }
+  };
+
   const colorClasses = nodeTypeColors[nodeData.type] || 'bg-gray-500 border-gray-500';
 
   return (
@@ -34,7 +41,8 @@ export function CustomNode({ data }: NodeProps) {
           'transition-all duration-200 hover:shadow-lg hover:scale-105',
           'min-w-[200px] max-w-[250px]',
           colorClasses,
-          'bg-opacity-90 hover:bg-opacity-100'
+          'bg-opacity-90 hover:bg-opacity-100',
+          'relative'
         )}
       >
         <div className="text-white">
@@ -44,6 +52,38 @@ export function CustomNode({ data }: NodeProps) {
           )}
           {nodeData.currentHolder && (
             <div className="text-xs mt-1 opacity-80 italic">{nodeData.currentHolder}</div>
+          )}
+
+          {/* Expand/Collapse Button */}
+          {nodeData.hasChildren && (
+            <button
+              onClick={handleToggle}
+              className={clsx(
+                'absolute -bottom-3 left-1/2 -translate-x-1/2',
+                'w-7 h-7 rounded-full',
+                'bg-white border-2 shadow-lg',
+                'flex items-center justify-center',
+                'transition-all duration-200 hover:scale-125 hover:shadow-xl',
+                'text-gray-700 font-bold text-sm',
+                'cursor-pointer z-10',
+                colorClasses.split(' ')[1] // Get border color class
+              )}
+              title={nodeData.isExpanded ? 'Click to collapse' : `Click to expand ${nodeData.childCount} ${nodeData.childCount === 1 ? 'child' : 'children'}`}
+            >
+              {nodeData.isExpanded ? '−' : '+'}
+            </button>
+          )}
+
+          {/* Children Count Indicator (only when collapsed) */}
+          {nodeData.hasChildren && !nodeData.isExpanded && (
+            <div
+              className="mt-2 pt-2 border-t border-white/30 text-center"
+              title={`${nodeData.childCount} hidden ${nodeData.childCount === 1 ? 'child' : 'children'}`}
+            >
+              <span className="text-[10px] opacity-80">
+                {nodeData.childCount} {nodeData.childCount === 1 ? 'child' : 'children'} hidden
+              </span>
+            </div>
           )}
         </div>
       </div>

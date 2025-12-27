@@ -37,6 +37,10 @@ export interface GraphData {
 
 export interface CustomNodeData extends GraphNode {
   onNodeClick?: (node: GraphNode) => void;
+  onToggle?: () => void;
+  isExpanded?: boolean;
+  hasChildren?: boolean;
+  childCount?: number;
   [key: string]: unknown;
 }
 

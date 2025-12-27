@@ -20,7 +20,7 @@ export function NodeDetails({ node, onClose }: NodeDetailsProps) {
   if (!node) return null;
 
   return (
-    <div className="absolute top-4 right-4 bg-white rounded-lg shadow-xl p-6 w-96 max-h-[80vh] overflow-y-auto z-10">
+    <div className="absolute top-4 right-4 bg-white rounded-lg shadow-xl p-6 w-96 max-h-[80vh] overflow-y-auto z-50">
       <div className="flex justify-between items-start mb-4">
         <h2 className="text-2xl font-bold text-gray-800">{node.label}</h2>
         <button

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   ReactFlow,
   Background,
@@ -13,41 +13,56 @@ import '@xyflow/react/dist/style.css';
 
 import { CustomNode } from './CustomNode';
 import { NodeDetails } from './NodeDetails';
-import { buildTreeStructure } from '../lib/treeBuilder';
 import { getLayoutedElements } from '../lib/layoutEngine';
-import type { GraphData, GraphNode, CustomNodeData } from '../types';
+import type { GraphNode, CustomNodeData } from '../types';
+import type { ProcessedData } from '../lib/dataProcessor';
 
 const nodeTypes: NodeTypes = {
   custom: CustomNode,
 };
 
 interface TreeVisualizationProps {
-  data: GraphData | null;
+  processedData: ProcessedData;
   selectedNode: GraphNode | null;
   onNodeSelect: (node: GraphNode | null) => void;
 }
 
 export default function TreeVisualization({
-  data,
+  processedData,
   selectedNode,
   onNodeSelect,
 }: TreeVisualizationProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState<Node<CustomNodeData>>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+
+  // Toggle node expansion
+  const handleNodeToggle = useCallback((nodeId: string) => {
+    setExpandedNodes(prev => {
+      const next = new Set(prev);
+      if (next.has(nodeId)) {
+        next.delete(nodeId);
+      } else {
+        next.add(nodeId);
+      }
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
-    if (!data) return;
+    // Use pre-built tree from processed data
+    const { tree, raw } = processedData;
 
-    // Build tree structure
-    const treeRoots = buildTreeStructure(data);
-
-    // Convert tree to React Flow nodes and edges
+    // Convert tree to React Flow nodes and edges (only visible ones)
     const flowNodes: Node<CustomNodeData>[] = [];
     const flowEdges: Edge[] = [];
 
-    // Flatten tree and create nodes/edges
-    function processNode(node: any, parentId?: string) {
-      // Add node
+    // Flatten tree and create nodes/edges (respecting collapsed state)
+    function processNode(node: any, parentId?: string, depth: number = 0): void {
+      const isExpanded = expandedNodes.has(node.id);
+      const hasChildren = node.children && node.children.length > 0;
+
+      // Add node with expansion state
       flowNodes.push({
         id: node.id,
         type: 'custom',
@@ -55,12 +70,16 @@ export default function TreeVisualization({
         data: {
           ...node,
           onNodeClick: onNodeSelect,
+          isExpanded,
+          hasChildren,
+          childCount: hasChildren ? node.children.length : 0,
+          onToggle: hasChildren ? () => handleNodeToggle(node.id) : undefined,
         },
       });
 
       // Add edge from parent
-      if (parentId && data) {
-        const relationship = data.edges.find(
+      if (parentId) {
+        const relationship = raw.edges.find(
           e => e.from === parentId && e.to === node.id
         )?.relationship;
 
@@ -74,14 +93,14 @@ export default function TreeVisualization({
         });
       }
 
-      // Process children
-      if (node.children && node.children.length > 0) {
-        node.children.forEach((child: any) => processNode(child, node.id));
+      // Process children only if expanded
+      if (hasChildren && isExpanded) {
+        node.children.forEach((child: any) => processNode(child, node.id, depth + 1));
       }
     }
 
-    // Process each root
-    treeRoots.forEach(root => processNode(root));
+    // Process each root (tree is already built!)
+    tree.forEach(root => processNode(root));
 
     // Apply tree layout
     const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
@@ -92,23 +111,50 @@ export default function TreeVisualization({
 
     setNodes(layoutedNodes);
     setEdges(layoutedEdges);
-  }, [data, setNodes, setEdges, onNodeSelect]);
+  }, [processedData, expandedNodes, setNodes, setEdges, onNodeSelect, handleNodeToggle]);
 
   const handleCloseDetails = useCallback(() => {
     onNodeSelect(null);
   }, [onNodeSelect]);
 
-  if (!data) {
-    return (
-      <div className="h-full w-full flex items-center justify-center bg-gray-50">
-        <div className="text-gray-500">Loading tree view...</div>
-      </div>
-    );
-  }
+  // Expand/Collapse all nodes
+  const expandAll = useCallback(() => {
+    const allNodeIds = new Set<string>();
+    function collectIds(node: any) {
+      if (node.children && node.children.length > 0) {
+        allNodeIds.add(node.id);
+        node.children.forEach(collectIds);
+      }
+    }
+    processedData.tree.forEach(collectIds);
+    setExpandedNodes(allNodeIds);
+  }, [processedData]);
+
+  const collapseAll = useCallback(() => {
+    setExpandedNodes(new Set());
+  }, []);
 
   return (
     <div className="h-full w-full relative">
       <NodeDetails node={selectedNode} onClose={handleCloseDetails} />
+
+      {/* Tree Controls */}
+      <div className="absolute top-4 right-4 z-40 flex gap-2">
+        <button
+          onClick={expandAll}
+          className="px-4 py-2 bg-white rounded-lg shadow-md border-2 border-gray-300 hover:border-blue-500 hover:bg-blue-50 text-sm font-medium text-gray-700 hover:text-blue-700 transition-all cursor-pointer"
+          title="Expand all nodes to show full tree"
+        >
+          ⊕ Expand All
+        </button>
+        <button
+          onClick={collapseAll}
+          className="px-4 py-2 bg-white rounded-lg shadow-md border-2 border-gray-300 hover:border-red-500 hover:bg-red-50 text-sm font-medium text-gray-700 hover:text-red-700 transition-all cursor-pointer"
+          title="Collapse all nodes to show only roots"
+        >
+          ⊖ Collapse All
+        </button>
+      </div>
 
       <ReactFlow
         nodes={nodes}
