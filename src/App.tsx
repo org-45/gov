@@ -79,24 +79,6 @@ function App() {
       {/* Country Selector */}
       <CountrySelector currentCountry={currentCountry} />
 
-      {/* Metadata Card */}
-      {metadata && (
-        <div className="absolute top-24 left-4 bg-white rounded-lg shadow-lg p-4 z-20 max-w-sm">
-          <h1 className="text-xl font-bold text-gray-800 mb-1">{metadata.title}</h1>
-          <p className="text-sm text-gray-600 mb-2">{metadata.description}</p>
-          <p className="text-xs text-gray-500">
-            Last updated: {metadata.lastUpdated}
-          </p>
-          {processedData && (
-            <div className="mt-3 pt-3 border-t border-gray-200">
-              <p className="text-xs text-gray-500">
-                {processedData.statistics.totalNodes} nodes • {processedData.statistics.totalEdges} connections
-              </p>
-            </div>
-          )}
-        </div>
-      )}
-
       {/* Tree Visualization */}
       {processedData && (
         <TreeVisualization
