@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "title": "Government of the United Kingdom",
+    "description": "Constitutional Monarchy and Parliamentary Democracy",
+    "lastUpdated": "2025-12-27",
+    "country": "United Kingdom",
+    "source": "UK Constitution (Uncodified)"
+  },
+  "nodes": [
+    {
+      "id": "monarch",
+      "label": "The Monarch",
+      "type": "executive",
+      "tier": 1,
+      "description": "Head of State (Constitutional role)",
+      "currentHolder": "King Charles III",
+      "metadata": {
+        "role": "Ceremonial",
+        "succession": "Hereditary"
+      }
+    },
+    {
+      "id": "prime-minister",
+      "label": "Prime Minister",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of Government",
+      "currentHolder": "Keir Starmer",
+      "metadata": {
+        "party": "Labour",
+        "since": "July 5, 2024"
+      }
+    },
+    {
+      "id": "cabinet",
+      "label": "Cabinet",
+      "type": "executive",
+      "tier": 3,
+      "description": "Senior decision-making body",
+      "metadata": {
+        "ministers": "Approximately 25"
+      }
+    },
+    {
+      "id": "foreign-office",
+      "label": "Foreign, Commonwealth & Development Office",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Foreign affairs and international development"
+    },
+    {
+      "id": "home-office",
+      "label": "Home Office",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Immigration, security, and law and order"
+    },
+    {
+      "id": "treasury",
+      "label": "HM Treasury",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Economic and financial policy"
+    },
+    {
+      "id": "defence-ministry",
+      "label": "Ministry of Defence",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Armed forces and defence policy"
+    },
+    {
+      "id": "justice-ministry",
+      "label": "Ministry of Justice",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Courts, prisons, and legal system"
+    },
+    {
+      "id": "education-dept",
+      "label": "Department for Education",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Schools and children's services"
+    },
+    {
+      "id": "health-dept",
+      "label": "Department of Health and Social Care",
+      "type": "ministry",
+      "tier": 4,
+      "description": "NHS and public health"
+    },
+    {
+      "id": "business-dept",
+      "label": "Department for Business and Trade",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Business, trade, and industrial strategy"
+    },
+    {
+      "id": "transport-dept",
+      "label": "Department for Transport",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Transport infrastructure and policy"
+    },
+    {
+      "id": "energy-dept",
+      "label": "Department for Energy Security and Net Zero",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Energy policy and climate change"
+    },
+    {
+      "id": "environment-dept",
+      "label": "Department for Environment, Food and Rural Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Environment, farming, and food production"
+    },
+    {
+      "id": "work-pensions-dept",
+      "label": "Department for Work and Pensions",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Welfare and pension policy"
+    },
+    {
+      "id": "parliament",
+      "label": "Parliament",
+      "type": "legislative",
+      "tier": 2,
+      "description": "Bicameral legislature",
+      "metadata": {
+        "location": "Palace of Westminster"
+      }
+    },
+    {
+      "id": "house-of-commons",
+      "label": "House of Commons",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Lower house - 650 elected MPs",
+      "metadata": {
+        "members": "650",
+        "term": "5 years maximum"
+      }
+    },
+    {
+      "id": "house-of-lords",
+      "label": "House of Lords",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Upper house - Appointed and hereditary peers",
+      "metadata": {
+        "members": "Approximately 800"
+      }
+    },
+    {
+      "id": "supreme-court",
+      "label": "Supreme Court of the UK",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Highest court - 12 justices",
+      "metadata": {
+        "established": "2009",
+        "justices": "12"
+      }
+    },
+    {
+      "id": "court-of-appeal",
+      "label": "Court of Appeal",
+      "type": "judicial",
+      "tier": 3,
+      "description": "Second-highest court"
+    },
+    {
+      "id": "high-court",
+      "label": "High Court",
+      "type": "judicial",
+      "tier": 4,
+      "description": "Senior court of England and Wales"
+    },
+    {
+      "id": "devolved-scotland",
+      "label": "Scottish Parliament & Government",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Devolved government for Scotland"
+    },
+    {
+      "id": "devolved-wales",
+      "label": "Welsh Parliament & Government",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Devolved government for Wales"
+    },
+    {
+      "id": "devolved-ni",
+      "label": "Northern Ireland Assembly & Executive",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Devolved government for Northern Ireland"
+    },
+    {
+      "id": "local-councils",
+      "label": "Local Councils",
+      "type": "local",
+      "tier": 4,
+      "description": "County, district, and unitary authorities"
+    }
+  ],
+  "edges": [
+    {"from": "monarch", "to": "prime-minister", "relationship": "appoints"},
+    {"from": "monarch", "to": "parliament", "relationship": "appoints"},
+    {"from": "prime-minister", "to": "cabinet", "relationship": "leads"},
+    {"from": "cabinet", "to": "foreign-office", "relationship": "includes"},
+    {"from": "cabinet", "to": "home-office", "relationship": "includes"},
+    {"from": "cabinet", "to": "treasury", "relationship": "includes"},
+    {"from": "cabinet", "to": "defence-ministry", "relationship": "includes"},
+    {"from": "cabinet", "to": "justice-ministry", "relationship": "includes"},
+    {"from": "cabinet", "to": "education-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "health-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "business-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "transport-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "energy-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "environment-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "work-pensions-dept", "relationship": "includes"},
+    {"from": "parliament", "to": "house-of-commons", "relationship": "comprises"},
+    {"from": "parliament", "to": "house-of-lords", "relationship": "comprises"},
+    {"from": "house-of-commons", "to": "prime-minister", "relationship": "elects"},
+    {"from": "supreme-court", "to": "court-of-appeal", "relationship": "oversees"},
+    {"from": "court-of-appeal", "to": "high-court", "relationship": "oversees"},
+    {"from": "parliament", "to": "devolved-scotland", "relationship": "delegates"},
+    {"from": "parliament", "to": "devolved-wales", "relationship": "delegates"},
+    {"from": "parliament", "to": "devolved-ni", "relationship": "delegates"},
+    {"from": "devolved-scotland", "to": "local-councils", "relationship": "oversees"},
+    {"from": "devolved-wales", "to": "local-councils", "relationship": "oversees"},
+    {"from": "devolved-ni", "to": "local-councils", "relationship": "oversees"}
+  ]
+}

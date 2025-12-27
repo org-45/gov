@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "title": "Government of the People's Republic of China",
+    "description": "Socialist Republic - One-party state led by the Communist Party",
+    "lastUpdated": "2025-12-27",
+    "country": "China",
+    "source": "Constitution of the PRC 1982"
+  },
+  "nodes": [
+    {
+      "id": "cpc-general-secretary",
+      "label": "CPC General Secretary",
+      "type": "executive",
+      "tier": 1,
+      "description": "Leader of the Communist Party of China",
+      "currentHolder": "Xi Jinping",
+      "metadata": {
+        "party": "Communist Party of China",
+        "since": "2012"
+      }
+    },
+    {
+      "id": "president",
+      "label": "President of the PRC",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of State",
+      "currentHolder": "Xi Jinping",
+      "metadata": {
+        "elected_by": "National People's Congress"
+      }
+    },
+    {
+      "id": "premier",
+      "label": "Premier of the State Council",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of Government",
+      "currentHolder": "Li Qiang",
+      "metadata": {
+        "since": "2023"
+      }
+    },
+    {
+      "id": "state-council",
+      "label": "State Council",
+      "type": "executive",
+      "tier": 3,
+      "description": "Central People's Government - Executive cabinet",
+      "metadata": {
+        "role": "Highest organ of state administration"
+      }
+    },
+    {
+      "id": "foreign-ministry",
+      "label": "Ministry of Foreign Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Foreign policy and diplomacy"
+    },
+    {
+      "id": "national-defense",
+      "label": "Ministry of National Defense",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Military affairs and defense"
+    },
+    {
+      "id": "finance-ministry",
+      "label": "Ministry of Finance",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Fiscal policy and budget"
+    },
+    {
+      "id": "commerce-ministry",
+      "label": "Ministry of Commerce",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Trade and commerce"
+    },
+    {
+      "id": "education-ministry",
+      "label": "Ministry of Education",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Education policy and institutions"
+    },
+    {
+      "id": "science-ministry",
+      "label": "Ministry of Science and Technology",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Scientific research and development"
+    },
+    {
+      "id": "industry-ministry",
+      "label": "Ministry of Industry and Information Technology",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Industrial development and IT"
+    },
+    {
+      "id": "public-security",
+      "label": "Ministry of Public Security",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Law enforcement and internal security"
+    },
+    {
+      "id": "state-security",
+      "label": "Ministry of State Security",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Intelligence and counterintelligence"
+    },
+    {
+      "id": "justice-ministry",
+      "label": "Ministry of Justice",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Legal affairs and corrections"
+    },
+    {
+      "id": "npc",
+      "label": "National People's Congress",
+      "type": "legislative",
+      "tier": 2,
+      "description": "Supreme organ of state power - 2,904 members",
+      "metadata": {
+        "members": "2,904",
+        "term": "5 years",
+        "role": "Legislative and oversight"
+      }
+    },
+    {
+      "id": "npc-standing",
+      "label": "NPC Standing Committee",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Permanent body of the NPC",
+      "currentHolder": "Chairman: Zhao Leji",
+      "metadata": {
+        "members": "175"
+      }
+    },
+    {
+      "id": "cppcc",
+      "label": "Chinese People's Political Consultative Conference",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Political advisory body",
+      "metadata": {
+        "role": "Political consultation and oversight"
+      }
+    },
+    {
+      "id": "supreme-court",
+      "label": "Supreme People's Court",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Highest court in the PRC",
+      "metadata": {
+        "role": "Final appellate authority"
+      }
+    },
+    {
+      "id": "supreme-procuratorate",
+      "label": "Supreme People's Procuratorate",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Highest prosecutorial organ",
+      "metadata": {
+        "role": "Public prosecution and legal supervision"
+      }
+    },
+    {
+      "id": "high-courts",
+      "label": "Higher People's Courts",
+      "type": "judicial",
+      "tier": 3,
+      "description": "Provincial-level courts"
+    },
+    {
+      "id": "intermediate-courts",
+      "label": "Intermediate People's Courts",
+      "type": "judicial",
+      "tier": 4,
+      "description": "Municipal-level courts"
+    },
+    {
+      "id": "basic-courts",
+      "label": "Basic People's Courts",
+      "type": "judicial",
+      "tier": 4,
+      "description": "County and district-level courts"
+    },
+    {
+      "id": "central-military",
+      "label": "Central Military Commission",
+      "type": "executive",
+      "tier": 2,
+      "description": "Command of People's Liberation Army",
+      "currentHolder": "Chairman: Xi Jinping"
+    },
+    {
+      "id": "national-supervisory",
+      "label": "National Supervisory Commission",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Anti-corruption and supervisory body",
+      "metadata": {
+        "established": "2018"
+      }
+    },
+    {
+      "id": "provincial-governments",
+      "label": "Provincial-level Governments",
+      "type": "provincial",
+      "tier": 3,
+      "description": "23 provinces, 5 autonomous regions, 4 municipalities, 2 SARs"
+    },
+    {
+      "id": "local-governments",
+      "label": "Local People's Governments",
+      "type": "local",
+      "tier": 4,
+      "description": "Prefecture, county, and township levels"
+    }
+  ],
+  "edges": [
+    {"from": "cpc-general-secretary", "to": "president", "relationship": "leads"},
+    {"from": "cpc-general-secretary", "to": "central-military", "relationship": "chairs"},
+    {"from": "president", "to": "premier", "relationship": "appoints"},
+    {"from": "premier", "to": "state-council", "relationship": "leads"},
+    {"from": "state-council", "to": "foreign-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "national-defense", "relationship": "includes"},
+    {"from": "state-council", "to": "finance-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "commerce-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "education-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "science-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "industry-ministry", "relationship": "includes"},
+    {"from": "state-council", "to": "public-security", "relationship": "includes"},
+    {"from": "state-council", "to": "state-security", "relationship": "includes"},
+    {"from": "state-council", "to": "justice-ministry", "relationship": "includes"},
+    {"from": "npc", "to": "npc-standing", "relationship": "elects"},
+    {"from": "npc", "to": "president", "relationship": "elects"},
+    {"from": "npc", "to": "premier", "relationship": "elects"},
+    {"from": "npc", "to": "cppcc", "relationship": "oversees"},
+    {"from": "supreme-court", "to": "high-courts", "relationship": "oversees"},
+    {"from": "high-courts", "to": "intermediate-courts", "relationship": "oversees"},
+    {"from": "intermediate-courts", "to": "basic-courts", "relationship": "oversees"},
+    {"from": "npc", "to": "national-supervisory", "relationship": "elects"},
+    {"from": "state-council", "to": "provincial-governments", "relationship": "oversees"},
+    {"from": "provincial-governments", "to": "local-governments", "relationship": "oversees"}
+  ]
+}

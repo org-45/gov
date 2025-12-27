@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import TreeVisualization from './components/TreeVisualization';
+import { CountrySelector } from './components/CountrySelector';
 import { loadGraphData, getDataFileFromUrl } from './lib/dataLoader';
 import { processGraphData, type ProcessedData } from './lib/dataProcessor';
 import type { GraphNode } from './types';
@@ -9,6 +10,7 @@ function App() {
   const [processedData, setProcessedData] = useState<ProcessedData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const currentCountry = getDataFileFromUrl();
 
   useEffect(() => {
     async function loadData() {
@@ -16,9 +18,8 @@ function App() {
         setLoading(true);
         setError(null);
 
-        // Load raw data
-        const dataFile = getDataFileFromUrl();
-        const rawData = await loadGraphData(dataFile);
+        // Load raw data based on subdomain or URL parameter
+        const rawData = await loadGraphData(currentCountry);
 
         // Process data into optimized structures
         const processed = processGraphData(rawData);
@@ -39,7 +40,7 @@ function App() {
     }
 
     loadData();
-  }, []);
+  }, []); // Only load once on mount - subdomain determines the data
 
   // Memoize metadata to avoid re-renders
   const metadata = useMemo(() => processedData?.raw.metadata, [processedData]);
@@ -75,9 +76,12 @@ function App() {
 
   return (
     <div className="h-screen w-screen relative">
+      {/* Country Selector */}
+      <CountrySelector currentCountry={currentCountry} />
+
       {/* Metadata Card */}
       {metadata && (
-        <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-4 z-20 max-w-sm">
+        <div className="absolute top-16 left-4 bg-white rounded-lg shadow-lg p-4 z-20 max-w-sm">
           <h1 className="text-xl font-bold text-gray-800 mb-1">{metadata.title}</h1>
           <p className="text-sm text-gray-600 mb-2">{metadata.description}</p>
           <p className="text-xs text-gray-500">

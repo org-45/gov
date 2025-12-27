@@ -47,7 +47,46 @@ function validateGraphData(data: unknown): asserts data is GraphData {
   }
 }
 
+// Mapping of subdomains to data files
+const subdomainToDataFile: Record<string, string> = {
+  'nepal': 'nepal-government',
+  'usa': 'usa-government',
+  'uk': 'uk-government',
+  'india': 'india-government',
+  'china': 'china-government',
+};
+
 export function getDataFileFromUrl(): string {
+  // First, check if there's a subdomain
+  const hostname = window.location.hostname;
+
+  // Extract subdomain (e.g., 'nepal' from 'nepal.visualize-gov.pages.dev')
+  const parts = hostname.split('.');
+  if (parts.length >= 3) {
+    // If hostname is like 'nepal.visualize-gov.pages.dev' or 'nepal.localhost'
+    const subdomain = parts[0];
+    if (subdomainToDataFile[subdomain]) {
+      return subdomainToDataFile[subdomain];
+    }
+  }
+
+  // Fall back to URL parameter
   const params = new URLSearchParams(window.location.search);
-  return params.get('data') || 'nepal-government';
+  const dataParam = params.get('data');
+  if (dataParam) {
+    return dataParam;
+  }
+
+  // Default to Nepal
+  return 'nepal-government';
+}
+
+export function getCountryFromDataFile(dataFile: string): string {
+  // Reverse lookup: find the subdomain key for the data file
+  for (const [subdomain, file] of Object.entries(subdomainToDataFile)) {
+    if (file === dataFile) {
+      return subdomain;
+    }
+  }
+  return 'nepal';
 }

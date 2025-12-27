@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "title": "Government of India",
+    "description": "Federal Parliamentary Democratic Republic",
+    "lastUpdated": "2025-12-27",
+    "country": "India",
+    "source": "Constitution of India 1950"
+  },
+  "nodes": [
+    {
+      "id": "president",
+      "label": "President of India",
+      "type": "executive",
+      "tier": 1,
+      "description": "Head of State (Ceremonial)",
+      "currentHolder": "Droupadi Murmu",
+      "metadata": {
+        "term": "5 years",
+        "election": "Electoral college"
+      }
+    },
+    {
+      "id": "vice-president",
+      "label": "Vice President of India",
+      "type": "executive",
+      "tier": 2,
+      "description": "Second-highest constitutional position",
+      "currentHolder": "Jagdeep Dhankhar",
+      "metadata": {
+        "role": "Chairman of Rajya Sabha"
+      }
+    },
+    {
+      "id": "prime-minister",
+      "label": "Prime Minister",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of Government",
+      "currentHolder": "Narendra Modi",
+      "metadata": {
+        "party": "BJP",
+        "since": "May 26, 2014"
+      }
+    },
+    {
+      "id": "union-cabinet",
+      "label": "Union Council of Ministers",
+      "type": "executive",
+      "tier": 3,
+      "description": "Cabinet led by Prime Minister"
+    },
+    {
+      "id": "home-ministry",
+      "label": "Ministry of Home Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Internal security and law enforcement"
+    },
+    {
+      "id": "defence-ministry",
+      "label": "Ministry of Defence",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Armed forces and defence policy"
+    },
+    {
+      "id": "finance-ministry",
+      "label": "Ministry of Finance",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Economic policy and taxation"
+    },
+    {
+      "id": "external-affairs",
+      "label": "Ministry of External Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Foreign relations and diplomacy"
+    },
+    {
+      "id": "health-ministry",
+      "label": "Ministry of Health and Family Welfare",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Public health and medical services"
+    },
+    {
+      "id": "education-ministry",
+      "label": "Ministry of Education",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Education policy and institutions"
+    },
+    {
+      "id": "railways-ministry",
+      "label": "Ministry of Railways",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Indian Railways operations"
+    },
+    {
+      "id": "agriculture-ministry",
+      "label": "Ministry of Agriculture and Farmers Welfare",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Agriculture and farming policy"
+    },
+    {
+      "id": "commerce-ministry",
+      "label": "Ministry of Commerce and Industry",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Trade and industrial development"
+    },
+    {
+      "id": "it-ministry",
+      "label": "Ministry of Electronics and IT",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Technology and digital infrastructure"
+    },
+    {
+      "id": "parliament",
+      "label": "Parliament of India",
+      "type": "legislative",
+      "tier": 2,
+      "description": "Bicameral legislature consisting of President and two houses",
+      "metadata": {
+        "total_members": "788 (543 + 245)"
+      }
+    },
+    {
+      "id": "lok-sabha",
+      "label": "Lok Sabha",
+      "type": "legislative",
+      "tier": 3,
+      "description": "House of the People - Lower house",
+      "metadata": {
+        "members": "543",
+        "term": "5 years",
+        "election": "Direct election"
+      }
+    },
+    {
+      "id": "rajya-sabha",
+      "label": "Rajya Sabha",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Council of States - Upper house",
+      "metadata": {
+        "members": "245",
+        "term": "6 years (staggered)",
+        "chairman": "Vice President of India"
+      }
+    },
+    {
+      "id": "supreme-court",
+      "label": "Supreme Court of India",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Apex court - Chief Justice and judges",
+      "metadata": {
+        "judges": "34 (including CJI)",
+        "established": "1950"
+      }
+    },
+    {
+      "id": "high-courts",
+      "label": "High Courts",
+      "type": "judicial",
+      "tier": 3,
+      "description": "25 High Courts at state/UT level",
+      "metadata": {
+        "count": "25"
+      }
+    },
+    {
+      "id": "district-courts",
+      "label": "District Courts",
+      "type": "judicial",
+      "tier": 4,
+      "description": "Trial courts at district level",
+      "metadata": {
+        "role": "Civil and criminal jurisdiction"
+      }
+    },
+    {
+      "id": "election-commission",
+      "label": "Election Commission of India",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Conducts elections to Parliament and state legislatures",
+      "metadata": {
+        "commissioners": "3"
+      }
+    },
+    {
+      "id": "comptroller-auditor",
+      "label": "Comptroller and Auditor General",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Audits government accounts"
+    },
+    {
+      "id": "attorney-general",
+      "label": "Attorney General of India",
+      "type": "constitutional",
+      "tier": 2,
+      "description": "Chief legal advisor to government"
+    },
+    {
+      "id": "state-governments",
+      "label": "28 State Governments",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Each with Governor, Chief Minister, and State Legislature"
+    },
+    {
+      "id": "union-territories",
+      "label": "8 Union Territories",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Administered by Lieutenant Governors"
+    },
+    {
+      "id": "local-bodies",
+      "label": "Local Self-Governments",
+      "type": "local",
+      "tier": 4,
+      "description": "Panchayats (rural) and Municipalities (urban)"
+    }
+  ],
+  "edges": [
+    {"from": "president", "to": "vice-president", "relationship": "appoints"},
+    {"from": "president", "to": "prime-minister", "relationship": "appoints"},
+    {"from": "prime-minister", "to": "union-cabinet", "relationship": "leads"},
+    {"from": "union-cabinet", "to": "home-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "defence-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "finance-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "external-affairs", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "health-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "education-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "railways-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "agriculture-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "commerce-ministry", "relationship": "includes"},
+    {"from": "union-cabinet", "to": "it-ministry", "relationship": "includes"},
+    {"from": "parliament", "to": "lok-sabha", "relationship": "comprises"},
+    {"from": "parliament", "to": "rajya-sabha", "relationship": "comprises"},
+    {"from": "lok-sabha", "to": "prime-minister", "relationship": "elects"},
+    {"from": "vice-president", "to": "rajya-sabha", "relationship": "chairs"},
+    {"from": "supreme-court", "to": "high-courts", "relationship": "oversees"},
+    {"from": "high-courts", "to": "district-courts", "relationship": "oversees"},
+    {"from": "president", "to": "election-commission", "relationship": "appoints"},
+    {"from": "president", "to": "comptroller-auditor", "relationship": "appoints"},
+    {"from": "president", "to": "attorney-general", "relationship": "appoints"},
+    {"from": "president", "to": "state-governments", "relationship": "appoints"},
+    {"from": "president", "to": "union-territories", "relationship": "appoints"},
+    {"from": "state-governments", "to": "local-bodies", "relationship": "oversees"},
+    {"from": "union-territories", "to": "local-bodies", "relationship": "oversees"}
+  ]
+}

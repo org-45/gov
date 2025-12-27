@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects and rewrites
+# All subdomains serve the same app, which detects the subdomain in JavaScript
+
+# Allow all subdomains to serve the app
+/* /index.html 200

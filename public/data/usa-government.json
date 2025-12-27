@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "title": "Government of the United States",
+    "description": "Federal Republic - Three Branches of Government",
+    "lastUpdated": "2025-12-27",
+    "country": "United States",
+    "source": "U.S. Constitution"
+  },
+  "nodes": [
+    {
+      "id": "constitution",
+      "label": "U.S. Constitution",
+      "type": "constitutional",
+      "tier": 1,
+      "description": "Supreme law of the United States",
+      "metadata": {
+        "ratified": "1788",
+        "amendments": "27"
+      }
+    },
+    {
+      "id": "president",
+      "label": "President",
+      "type": "executive",
+      "tier": 2,
+      "description": "Head of State and Government",
+      "currentHolder": "Joe Biden",
+      "metadata": {
+        "term": "4 years",
+        "website": "https://www.whitehouse.gov"
+      }
+    },
+    {
+      "id": "vice-president",
+      "label": "Vice President",
+      "type": "executive",
+      "tier": 3,
+      "description": "Second-in-command, President of the Senate",
+      "currentHolder": "Kamala Harris"
+    },
+    {
+      "id": "cabinet",
+      "label": "Cabinet",
+      "type": "executive",
+      "tier": 3,
+      "description": "15 executive departments headed by secretaries",
+      "metadata": {
+        "departments": "15"
+      }
+    },
+    {
+      "id": "state-dept",
+      "label": "Department of State",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Foreign affairs and diplomacy",
+      "metadata": {
+        "established": "1789"
+      }
+    },
+    {
+      "id": "treasury-dept",
+      "label": "Department of the Treasury",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Financial and monetary policy",
+      "metadata": {
+        "established": "1789"
+      }
+    },
+    {
+      "id": "defense-dept",
+      "label": "Department of Defense",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Military and national security",
+      "metadata": {
+        "established": "1947"
+      }
+    },
+    {
+      "id": "justice-dept",
+      "label": "Department of Justice",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Law enforcement and legal affairs",
+      "metadata": {
+        "established": "1870"
+      }
+    },
+    {
+      "id": "interior-dept",
+      "label": "Department of the Interior",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Natural resources and indigenous peoples"
+    },
+    {
+      "id": "agriculture-dept",
+      "label": "Department of Agriculture",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Farming, forestry, and food"
+    },
+    {
+      "id": "commerce-dept",
+      "label": "Department of Commerce",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Economic growth and trade"
+    },
+    {
+      "id": "labor-dept",
+      "label": "Department of Labor",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Workers' rights and employment"
+    },
+    {
+      "id": "hhs-dept",
+      "label": "Department of Health and Human Services",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Public health and welfare"
+    },
+    {
+      "id": "hud-dept",
+      "label": "Department of Housing and Urban Development",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Housing and urban planning"
+    },
+    {
+      "id": "transportation-dept",
+      "label": "Department of Transportation",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Transportation infrastructure"
+    },
+    {
+      "id": "energy-dept",
+      "label": "Department of Energy",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Energy policy and nuclear security"
+    },
+    {
+      "id": "education-dept",
+      "label": "Department of Education",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Federal education policy"
+    },
+    {
+      "id": "veterans-dept",
+      "label": "Department of Veterans Affairs",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Veterans benefits and services"
+    },
+    {
+      "id": "homeland-dept",
+      "label": "Department of Homeland Security",
+      "type": "ministry",
+      "tier": 4,
+      "description": "Border security and emergency response",
+      "metadata": {
+        "established": "2002"
+      }
+    },
+    {
+      "id": "congress",
+      "label": "Congress",
+      "type": "legislative",
+      "tier": 2,
+      "description": "Bicameral legislature",
+      "metadata": {
+        "members": "535 voting members"
+      }
+    },
+    {
+      "id": "senate",
+      "label": "Senate",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Upper house - 100 senators (2 per state)",
+      "metadata": {
+        "members": "100",
+        "term": "6 years"
+      }
+    },
+    {
+      "id": "house",
+      "label": "House of Representatives",
+      "type": "legislative",
+      "tier": 3,
+      "description": "Lower house - 435 representatives",
+      "metadata": {
+        "members": "435",
+        "term": "2 years"
+      }
+    },
+    {
+      "id": "supreme-court",
+      "label": "Supreme Court",
+      "type": "judicial",
+      "tier": 2,
+      "description": "Highest federal court - 9 justices",
+      "metadata": {
+        "justices": "9",
+        "appointment": "Lifetime",
+        "website": "https://www.supremecourt.gov"
+      }
+    },
+    {
+      "id": "appeals-courts",
+      "label": "Courts of Appeals",
+      "type": "judicial",
+      "tier": 3,
+      "description": "13 appellate courts",
+      "metadata": {
+        "count": "13 circuits"
+      }
+    },
+    {
+      "id": "district-courts",
+      "label": "District Courts",
+      "type": "judicial",
+      "tier": 4,
+      "description": "94 federal trial courts",
+      "metadata": {
+        "count": "94"
+      }
+    },
+    {
+      "id": "state-governments",
+      "label": "50 State Governments",
+      "type": "provincial",
+      "tier": 3,
+      "description": "Each with executive, legislative, and judicial branches"
+    },
+    {
+      "id": "local-governments",
+      "label": "Local Governments",
+      "type": "local",
+      "tier": 4,
+      "description": "Counties, cities, towns, and special districts"
+    }
+  ],
+  "edges": [
+    {"from": "constitution", "to": "president", "relationship": "establishes"},
+    {"from": "constitution", "to": "congress", "relationship": "establishes"},
+    {"from": "constitution", "to": "supreme-court", "relationship": "establishes"},
+    {"from": "president", "to": "vice-president", "relationship": "appoints"},
+    {"from": "president", "to": "cabinet", "relationship": "leads"},
+    {"from": "cabinet", "to": "state-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "treasury-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "defense-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "justice-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "interior-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "agriculture-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "commerce-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "labor-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "hhs-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "hud-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "transportation-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "energy-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "education-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "veterans-dept", "relationship": "includes"},
+    {"from": "cabinet", "to": "homeland-dept", "relationship": "includes"},
+    {"from": "congress", "to": "senate", "relationship": "comprises"},
+    {"from": "congress", "to": "house", "relationship": "comprises"},
+    {"from": "supreme-court", "to": "appeals-courts", "relationship": "oversees"},
+    {"from": "appeals-courts", "to": "district-courts", "relationship": "oversees"},
+    {"from": "president", "to": "state-governments", "relationship": "oversees"},
+    {"from": "state-governments", "to": "local-governments", "relationship": "oversees"}
+  ]
+}
