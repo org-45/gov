@@ -57,24 +57,25 @@ export function CountrySelector({ currentCountry }: CountrySelectorProps) {
   };
 
   return (
-    <div className="absolute top-4 left-4 z-40 flex gap-1 bg-white rounded-md shadow-md px-1 py-1 border border-gray-200">
+    <div className="absolute top-4 left-4 z-40 flex gap-1.5">
       {countries.map((country) => (
         <button
           key={country.code}
           onClick={() => handleCountryChange(country.subdomain)}
           className={`
             flex items-center justify-center
-            w-10 h-10 rounded
+            w-9 h-9
             transition-all duration-200
+            hover:scale-125
             ${
               currentCountry === country.dataFile
-                ? 'bg-gray-100 scale-110 shadow-sm ring-2 ring-blue-400'
-                : 'bg-gray-50 hover:bg-gray-100 hover:scale-105'
+                ? 'scale-125 drop-shadow-lg'
+                : 'opacity-70 hover:opacity-100 drop-shadow-md'
             }
           `}
           title={country.name}
         >
-          <span className="text-xl">{country.flag}</span>
+          <span className="text-2xl">{country.flag}</span>
         </button>
       ))}
     </div>

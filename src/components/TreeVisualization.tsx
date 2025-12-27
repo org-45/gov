@@ -186,8 +186,14 @@ function TreeVisualizationInner({
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
+        fitViewOptions={{
+          padding: 0.2,
+          minZoom: 0.5,
+          maxZoom: 1.5,
+        }}
         minZoom={0.1}
         maxZoom={2}
+        defaultViewport={{ x: 0, y: 0, zoom: 0.7 }}
         defaultEdgeOptions={{
           type: 'smoothstep',
           animated: false,

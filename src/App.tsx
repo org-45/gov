@@ -81,7 +81,7 @@ function App() {
 
       {/* Metadata Card */}
       {metadata && (
-        <div className="absolute top-16 left-4 bg-white rounded-lg shadow-lg p-4 z-20 max-w-sm">
+        <div className="absolute top-24 left-4 bg-white rounded-lg shadow-lg p-4 z-20 max-w-sm">
           <h1 className="text-xl font-bold text-gray-800 mb-1">{metadata.title}</h1>
           <p className="text-sm text-gray-600 mb-2">{metadata.description}</p>
           <p className="text-xs text-gray-500">
