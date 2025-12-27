@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import TreeVisualization from './components/TreeVisualization';
 import { CountrySelector } from './components/CountrySelector';
 import { loadGraphData, getDataFileFromUrl } from './lib/dataLoader';
@@ -41,9 +41,6 @@ function App() {
 
     loadData();
   }, []); // Only load once on mount - subdomain determines the data
-
-  // Memoize metadata to avoid re-renders
-  const metadata = useMemo(() => processedData?.raw.metadata, [processedData]);
 
   if (loading) {
     return (
