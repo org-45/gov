@@ -20,7 +20,6 @@ interface CountrySelectorProps {
 
 function getSubdomainUrl(subdomain: string): string {
   const hostname = window.location.hostname;
-  const parts = hostname.split('.');
 
   // Handle localhost development
   if (hostname === 'localhost' || hostname.startsWith('127.0.0.1')) {
@@ -28,10 +27,18 @@ function getSubdomainUrl(subdomain: string): string {
     return `${window.location.protocol}//${hostname}${window.location.port ? ':' + window.location.port : ''}?data=${subdomain}-government`;
   }
 
-  // Production: Build subdomain URL
-  // From 'visualize-gov.pages.dev' → 'nepal.visualize-gov.pages.dev'
-  // From 'nepal.visualize-gov.pages.dev' → 'usa.visualize-gov.pages.dev'
+  // For production on Cloudflare Pages without custom domain
+  // Use query parameters instead of subdomains since *.pages.dev doesn't support custom subdomains
+  if (hostname.endsWith('.pages.dev')) {
+    return `${window.location.protocol}//${hostname}${window.location.pathname}?data=${subdomain}-government`;
+  }
+
+  // For custom domains: Build subdomain URL
+  // From 'yourdomain.com' → 'nepal.yourdomain.com'
+  // From 'nepal.yourdomain.com' → 'usa.yourdomain.com'
+  const parts = hostname.split('.');
   let baseDomain: string;
+
   if (parts.length >= 3) {
     // Already has a subdomain, replace it
     baseDomain = parts.slice(1).join('.');
