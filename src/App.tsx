@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import TreeVisualization from './components/TreeVisualization';
 import { CountrySelector } from './components/CountrySelector';
+import OnboardingTutorial from './components/OnboardingTutorial';
 import { loadGraphData, getDataFileFromUrl } from './lib/dataLoader';
 import { processGraphData, type ProcessedData } from './lib/dataProcessor';
 import type { GraphNode } from './types';
@@ -10,7 +11,28 @@ function App() {
   const [processedData, setProcessedData] = useState<ProcessedData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+
+  useEffect(() => {
+    // Check if user has seen onboarding after data is loaded
+    if (processedData && !loading) {
+      const hasSeenOnboarding = localStorage.getItem('onboarding_completed');
+      if (!hasSeenOnboarding) {
+        setShowOnboarding(true);
+        setSelectedNode(null); // Close any open node details
+        localStorage.setItem('onboarding_completed', 'true');
+      }
+    }
+  }, [processedData, loading]);
   const currentCountry = getDataFileFromUrl();
+
+  const handleCompleteOnboarding = () => {
+    setShowOnboarding(false);
+  };
+
+  const handleSkipOnboarding = () => {
+    setShowOnboarding(false);
+  };
 
   useEffect(() => {
     async function loadData() {
@@ -82,6 +104,15 @@ function App() {
           processedData={processedData}
           selectedNode={selectedNode}
           onNodeSelect={setSelectedNode}
+          hideNodeDetails={showOnboarding}
+        />
+      )}
+
+      {/* Onboarding Tutorial */}
+      {showOnboarding && !loading && processedData && (
+        <OnboardingTutorial
+          onComplete={handleCompleteOnboarding}
+          onSkip={handleSkipOnboarding}
         />
       )}
     </div>

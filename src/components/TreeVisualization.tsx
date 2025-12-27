@@ -27,12 +27,14 @@ interface TreeVisualizationProps {
   processedData: ProcessedData;
   selectedNode: GraphNode | null;
   onNodeSelect: (node: GraphNode | null) => void;
+  hideNodeDetails?: boolean;
 }
 
 function TreeVisualizationInner({
   processedData,
   selectedNode,
   onNodeSelect,
+  hideNodeDetails = false,
 }: TreeVisualizationProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState<Node<CustomNodeData>>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
@@ -159,7 +161,7 @@ function TreeVisualizationInner({
 
   return (
     <div className="h-full w-full relative">
-      <NodeDetails node={selectedNode} onClose={handleCloseDetails} />
+      {!hideNodeDetails && <NodeDetails node={selectedNode} onClose={handleCloseDetails} />}
 
       {/* Tree Controls */}
       <div className="absolute top-4 right-4 z-40 flex gap-2">
